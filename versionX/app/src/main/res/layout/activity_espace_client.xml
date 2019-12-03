@@ -7,6 +7,17 @@
     tools:context=".EspaceClient">
 
 
+    <Button
+        android:id="@+id/backClient"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="360dp"
+        android:text="X"
+        android:textStyle="bold"
+        />
+
+
+
     <LinearLayout
         android:layout_width="351dp"
         android:layout_height="370dp"
@@ -20,6 +31,8 @@
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:text="Support Ticket System"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
             android:layout_marginLeft="90dp"
 
 
@@ -29,30 +42,38 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="88dp"
-            android:text="Cet espace est réservé blablablaCet espace est réservé blablabla" />
+            android:text="Cet espace est réservé au client ayant déja un compte"
+            android:textAlignment="center"
+            android:textStyle="italic"/>
 
         <EditText
             android:id="@+id/UsernameClient"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Courriel ou nom d'utilisateur" />
+            android:hint="User Name"
+            android:background="@drawable/border"/>
 
         <EditText
             android:id="@+id/passwordClient"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:background="@drawable/border"/>
 
         <Button
             android:id="@+id/buttonCli"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="Connexion"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="120dp"/>
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="120dp"
+            android:background="@drawable/border"/>
+
     </LinearLayout>
 
 </RelativeLayout>

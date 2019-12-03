@@ -15,7 +15,7 @@ public class EspaceClient extends AppCompatActivity {
     SQLiteDataBaseHelper db;
 
     EditText e1,e2;
-    Button connexionClient;
+    Button connexionClient , backClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,21 @@ public class EspaceClient extends AppCompatActivity {
         connexionClient=findViewById(R.id.buttonCli);
         e1=findViewById(R.id.UsernameClient);
         e2=findViewById(R.id.passwordClient);
+        backClient=findViewById(R.id.backClient);
+
+
+
+        backClient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent backclient = new Intent(getApplicationContext(),MainActivity.class );
+                startActivity(backclient);
+                finish();
+
+            }
+        });
+
 
         connexionClient.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,16 +48,22 @@ public class EspaceClient extends AppCompatActivity {
 
                 String s1 = e1.getText().toString();
                 String s2 = e2.getText().toString();
+                String passwordDb=db.searchUser(s1);
 
                 if (s1.equals("") || s2.equals("")) {
                     Toast.makeText(getApplicationContext(), "veuillez remplir tout les champs", Toast.LENGTH_SHORT).show();
                 }
-                else {
+                else{
+                    if(s2.equals(passwordDb)){
 
-                    Intent otherActivity = new Intent(getApplicationContext(), New_Ticket.class);
-                    startActivity(otherActivity);
-                    finish();
+                        Intent otherActivity = new Intent(getApplicationContext(), New_Ticket.class);
+                        otherActivity.putExtra("UserName",s1);
+                        startActivity(otherActivity);
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(), "Connexion echoué", Toast.LENGTH_SHORT).show();
 
+                    }
                 }
             }
         });

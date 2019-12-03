@@ -3,6 +3,7 @@ package com.example.versionx;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,7 @@ public class newClient1 extends AppCompatActivity {
 
             EditText edt1;
             EditText edt2;
-            Button btn, btnShowData;
+            Button btn, btnBack;
 
             @Override
             protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +27,19 @@ public class newClient1 extends AppCompatActivity {
                 edt1=findViewById(R.id.editTextNewClient1);
                 edt2=findViewById(R.id.editTextNewClient2);
                 btn=findViewById(R.id.buttonAjouter);
+                btnBack=findViewById(R.id.btnBack);
                 AddData();
-                btnShowData=findViewById(R.id.afficher_tables);
-                ViewAll();
+
+                btnBack.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Intent back = new Intent(getApplicationContext(),Support.class );
+                        startActivity(back);
+                        finish();
+
+                    }
+                });
 
             }
 
@@ -47,34 +58,5 @@ public class newClient1 extends AppCompatActivity {
                             }
                         }
                 );
-            }
-            private void ViewAll() {
-                btnShowData.setOnClickListener(
-                        new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Cursor data=db.getAllData();
-                                if(data.getCount()==0){
-                                    showMessage("Error","No Data Found !");
-                                    return;
-                                }
-                                StringBuffer buffer= new StringBuffer();
-                                while(data.moveToNext()){
-                                    buffer.append("ID :"+data.getString(0)+"\n");
-                                    buffer.append("UserName :"+data.getString(1)+"\n");
-                                    buffer.append("PassWord :"+data.getString(2)+"\n");
-                                }
-                                showMessage("Data",buffer.toString());
-
-                            }
-                        }
-                );
-            }
-            public void showMessage(String title, String message) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setCancelable(true);
-                builder.setTitle(title);
-                builder.setMessage(message);
-                builder.show();
             }
 }

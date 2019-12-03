@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent otherActivity = new Intent(getApplicationContext(),EspaceClient.class );
-                startActivity(otherActivity);
+                Intent espaceClient = new Intent(getApplicationContext(),EspaceClient.class );
+                startActivity(espaceClient);
                 finish();
 
             }
@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent otherActivity = new Intent(getApplicationContext(),EspaceConsultant.class );
-                startActivity(otherActivity);
+                Intent espaceConsultant = new Intent(getApplicationContext(),EspaceConsultant.class );
+                startActivity(espaceConsultant);
                 finish();
 
             }

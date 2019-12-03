@@ -1,45 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".newClient1">
 
+       <Button
+           android:id="@+id/btnBack"
+           android:layout_width="40dp"
+           android:layout_height="40dp"
+           android:layout_marginLeft="370dp"
+           android:text="X"
+           android:textStyle="bold"
+           />
 
 
-    <LinearLayout
-        android:layout_width="268dp"
-        android:layout_height="443dp"
-        android:orientation="vertical"
-
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="114dp">
-
-        <TextView
-            android:id="@+id/textViewNewClient1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="UserName" />
 
         <EditText
             android:id="@+id/editTextNewClient1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="150dp"
             android:ems="10"
+            android:background="@drawable/border"
             android:inputType="textPersonName"
             android:hint="User Name" />
 
-        <TextView
-            android:id="@+id/TextViewNewClient2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Password" />
 
         <EditText
             android:id="@+id/editTextNewClient2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="200dp"
+            android:background="@drawable/border"
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="password"
@@ -49,24 +45,10 @@
             android:id="@+id/buttonAjouter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/border"
             android:text="Ajouter" />
 
-        <Button
-            android:id="@+id/afficher_tables"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="3dp"
-            android:background="@color/colorAccent"
-            android:clickable="true"
-            android:elevation="4dp"
-            android:padding="20dp"
-            android:text="Afficher ta table"
-            android:textAlignment="center"
-            android:textSize="20dp"
-            android:textStyle="bold" />
 
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

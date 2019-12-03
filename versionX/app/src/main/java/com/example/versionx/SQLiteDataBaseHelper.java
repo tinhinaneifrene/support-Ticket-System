@@ -10,7 +10,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class SQLiteDataBaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME="Authentification.db";
     public static final String TABLE_NAME="Authentification_table";
-    public static final String COL_1="ID";
     public static final String COL_2="UserName";
     public static final String COL_3="PassWord";
 
@@ -50,13 +49,24 @@ public class SQLiteDataBaseHelper extends SQLiteOpenHelper {
         Cursor result=db.rawQuery("select * from "+ TABLE_NAME,null);
         return result;
     }
+    public String searchUser(String USER){
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from "+TABLE_NAME, null);
+        String a, b;
+        b = "not found";
+        if (cursor.moveToFirst()) {
+            do {
+                a = cursor.getString(1);
 
-    public Boolean verification(String UserName1){
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor result=db.rawQuery("select * from TABLE_NAME where UserName =?",new String[]{UserName1});
-        if (result.getCount() > 0)
-            return false;
-        else
-            return true;
+                if (a.equals(USER)) {
+                    b = cursor.getString(2);
+                    break;
+                }
+            } while (cursor.moveToNext());
+
+        }
+        return b;
+
     }
+
 }

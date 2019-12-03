@@ -16,6 +16,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Support Ticket System"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
                     android:layout_marginTop="100dp"
                     android:layout_marginLeft="135dp"
                     />
@@ -26,22 +28,30 @@
 
         <Button
             android:id="@+id/buttonClient"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="260dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:text="Espace Client"
             android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
+            android:layout_marginLeft="75dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="270dp"
+            android:background="@drawable/border"
+
+
             />
 
         <Button
             android:id="@+id/buttonConsultant"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="260dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:text="Espace Consultant"
-            android:layout_centerInParent="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="75dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="350dp"
+            android:background="@drawable/border"
             />
 
 
